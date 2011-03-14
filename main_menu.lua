@@ -1,4 +1,5 @@
 require 'screen'
+require 'single_player'
 
 main_menu = class(screen)
 
@@ -12,6 +13,24 @@ function main_menu:new(manager)
 	self.selections_widths[2] = berlin_sans_roman:getWidth("Options") + 20
 	self.selections_widths[3] = berlin_sans_roman:getWidth("Credits") + 20
 	self.selections_widths[4] = berlin_sans_roman:getWidth("Quit") + 27
+	
+	-- Selection handlers
+	self.selection_handlers = { }
+	self.selection_handlers[0] = function ()
+		self.manager:push(single_player(self.manager))
+	end
+	self.selection_handlers[1] = function ()
+		
+	end
+	self.selection_handlers[2] = function ()
+		
+	end
+	self.selection_handlers[3] = function ()
+		
+	end
+	self.selection_handlers[4] = function ()
+		love.event.push('q')
+	end
 	
 	-- Clouds
 	self.clouds = {}
@@ -77,5 +96,7 @@ function main_menu:keypressed(key, unicode)
 		if self.selection > self.max_selection then
 			self.selection = 1
 		end
+	elseif key == "return" then
+		self.selection_handlers[self.selection - 1]()
 	end
 end

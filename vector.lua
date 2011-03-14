@@ -37,31 +37,3 @@ end
 function vector:cross(v)
 	return self.x * v.y - self.y * v.x
 end
-
-function vector:__add(v)
-	return vector(self.x + v.x, self.y + v.y)
-end
-
-function vector:__sub(v)
-	return vector(self.x - v.x, self.y - v.y)
-end
-
-function vector:__mul(other)
-	if type(other) == "number" then
-		return vector(self.x * other, self.y * other)
-	end
-	
-	return vector(self.x * other.x, self.y * other.y)
-end
-
-function vector:__div(other)
-	if type(other) == "number" then
-		return vector(self.x / other, self.y / other)
-	end
-	
-	return vector(self.x / other.x, self.y / other.y)
-end
-
-function vector:__eq(v)
-	return self.x == v.x and self.y == v.y
-end
