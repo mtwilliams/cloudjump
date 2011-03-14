@@ -19,15 +19,19 @@ function love.draw()
 end
 
 function love.mousepressed(x, y, button)
+	manager:mousepressed(x, y, button)
 end
 
 function love.mousereleased(x, y, button)
+	manager:mousereleased(x, y, button)
 end
 
 function love.keypressed(key, unicode)
+	manager:keypressed(key, unicode)
 end
 
 function love.keyreleased(key, unicode)
+	manager:keyreleased(key, unicode)
 end
 
 function love.focus(f)
