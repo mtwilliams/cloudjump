@@ -4,6 +4,7 @@ logo_image = nil
 cow_sprite = nil
 cow_frames = {}
 cloud_images = {}
+http = require("socket.http")
 
 function load_common()
 	berlin_sans_roman = love.graphics.newFont("fonts/BerlinSans-Roman.ttf", 16)

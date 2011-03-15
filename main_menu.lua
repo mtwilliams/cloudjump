@@ -45,12 +45,13 @@ function main_menu:AddSomeClouds()
 		self.clouds[offset + i].cloud = math.random(1, 2)
 		self.clouds[offset + i].x = math.random(-2000, 0)
 		self.clouds[offset + i].y = math.random(-400, 400)
+		self.clouds[offset + i].movement = math.random(0.5, 1.0)
 	end
 end
 
 function main_menu:update()
 	for i=0,#self.clouds do
-		self.clouds[i].x = self.clouds[i].x + 0.5
+		self.clouds[i].x = self.clouds[i].x + self.clouds[i].movement
 		if self.clouds[i].x > 850 then
 			self.clouds[i].cloud = math.random(1, 2)
 			self.clouds[i].x = math.random(-2000, 0)

@@ -7,6 +7,10 @@ function vector:new(x, y)
 	self.y = y
 end
 
+function vector:copy()
+	return vector(self.x, self.y)
+end
+
 function vector:rotate(angle)
 	-- Convert to radians
 	local radians = angle * (3.14159265 / 180)
