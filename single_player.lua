@@ -111,6 +111,3 @@ function single_player:draw()
 	
 	love.graphics.print("Score: " .. self.score, 5, 5)
 end
-
-function single_player:keypressed(key, unicode)
-end
